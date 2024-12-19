@@ -1,4 +1,4 @@
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View, TextInput, Button } from "react-native";
 import { useState, useEffect, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 import { useItems } from "../context/ItemsContext";
@@ -28,16 +28,16 @@ export default function AddScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View className="flex-1 p-4">
       <TextInput
-        style={styles.input}
+        className="h-10 border border-gray-300 rounded-lg mb-4 px-2"
         placeholder="Name"
         placeholderTextColor="#999"
         value={name}
         onChangeText={setName}
       />
       <TextInput
-        style={styles.input}
+        className="h-10 border border-gray-300 rounded-lg mb-4 px-2"
         placeholder="Price"
         placeholderTextColor="#999"
         value={price}
@@ -48,18 +48,3 @@ export default function AddScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  input: {
-    height: 40,
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 8,
-    marginBottom: 16,
-    paddingHorizontal: 8,
-  },
-});

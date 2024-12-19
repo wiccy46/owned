@@ -2,6 +2,7 @@ import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { ItemsProvider } from "../context/ItemsContext";
 import React from "react";
+import "../global.css";
 
 export default function RootLayout() {
   return (
