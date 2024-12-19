@@ -1,7 +1,7 @@
 import { Text, View, FlatList, StyleSheet } from "react-native";
 import { Settings } from "../constants/Settings";
 import { useItems } from "../context/ItemsContext";
-
+import React from "react";
 
 export default function HomeScreen() {
   const { items } = useItems();
@@ -17,7 +17,12 @@ export default function HomeScreen() {
           renderItem={({ item }) => (
             <View style={styles.itemCard}>
               <Text style={styles.itemName}>{item.name}</Text>
-              <Text>{Settings.currencyIcon}{item.price}</Text>
+              <Text>
+                {Settings.currencyIcon}
+                {item.price}
+              </Text>
+              <Text>{item.purchaseDate.toLocaleDateString()}</Text>
+              <Text>{item.icon}</Text>
             </View>
           )}
         />
@@ -25,7 +30,6 @@ export default function HomeScreen() {
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {

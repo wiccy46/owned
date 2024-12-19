@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useContext, useState } from "react";
 
 interface Item {
@@ -39,4 +40,4 @@ export function useItems() {
     throw new Error("useItems must be used within an ItemsProvider");
   }
   return context;
-} 
+}

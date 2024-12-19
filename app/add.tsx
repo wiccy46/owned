@@ -1,8 +1,9 @@
 import { View, TextInput, Button, StyleSheet } from "react-native";
 import { useState, useEffect, useCallback } from "react";
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect } from "@react-navigation/native";
 import { useItems } from "../context/ItemsContext";
-import { router } from 'expo-router';
+import { router } from "expo-router";
+import React from "react";
 
 export default function AddScreen() {
   const [name, setName] = useState("");
@@ -18,10 +19,10 @@ export default function AddScreen() {
 
   const handleSubmit = () => {
     addItem({
-        name,
-        price: parseFloat(price),
-        purchaseDate: new Date(),
-        icon: "🍎",
+      name,
+      price: parseFloat(price),
+      purchaseDate: new Date(),
+      icon: "🍎",
     });
     router.back();
   };
