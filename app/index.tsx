@@ -18,13 +18,19 @@ export default function HomeScreen() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <View className="p-4 bg-white rounded-lg mb-3 shadow-sm">
-              <Text className="text-lg font-bold mb-1">{item.name}</Text>
-              <Text>
-                {Settings.currencyIcon}
-                {item.price}
-              </Text>
-              <Text>{item.purchaseDate.toLocaleDateString()}</Text>
-              <Text>{item.icon}</Text>
+              <View className="flex-row justify-between items-center mb-1">
+                <Text className="text-lg font-bold">{item.name}</Text>
+                <Text>{item.icon}</Text>
+              </View>
+              <View className="flex-row justify-between items-center">
+                <Text>
+                  {Settings.currencyIcon}
+                  {item.price}
+                </Text>
+                <Text className="ml-4">
+                  Since: {item.purchaseDate.toLocaleDateString()}
+                </Text>
+              </View>
             </View>
           )}
         />
